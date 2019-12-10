@@ -107,9 +107,9 @@
               <th>Attendance</th>
             </tr>
 				
-			<form action="PDFdownload.php" method="POST">
-				<a href="PDFdownload.php">
-					<img src="download.png" alt="Download PDF" style="height: 50px; width: 50px; margin-left: 80%;">
+			<form action="excelsheet.php" method="POST">
+				<a href="excelsheet.php">
+					<img src="download.jpg" alt="Download Excel Sheet" style="height: 50px; width: 50px; margin-left: 80%;">
 				</a>
 			</form>
 			
