@@ -72,7 +72,7 @@ span.psw {
 </style>
         <title>Present-Percent</title>
     </head>
-    <body>
+    <body style="background-image:url('back2.jpg');">
 	<h1 style="text-align: center">Welcome</h1>
 <br><br>
         <form action="checklogin.php" method="POST">
