@@ -8,7 +8,7 @@
             
             button {
                 display: inline-block;
-				width: 300px;
+				width: 280px;
                 padding: 8px 20px;
                 border: 1px solid black;
                 background-color: rgb(170, 200, 214);
@@ -24,6 +24,8 @@
 
             .container {
                 padding: 16px;
+				text-align: center;
+				margin-top: 15%;
             }
         </style>
     </head>
@@ -52,20 +54,19 @@
 		}	
 		
 	?>
-	<body style="background-color:rgb(229,255,204); color:black">
-		<a href="index.php" style="color:rgb(0,0,102)">Click here to logout</a><br><br><br><br>  
+	<body style="border: 2px solid black; background-image:url('back2.jpg');">
+		<br><br>
+		<a href="index.php" style="color:rgb(0,0,102); float: right; margin-right: 3%;">Click here to logout</a>
  		
-		<h1 style="margin: 0px 50px;"><?php Print "$a_user"?></h1><br><br><br><br><br>
+		<h1 style="margin: 0px 50px; float: left"><?php Print "$a_user"?></h1>
 		
-		<div class="container">
+		<div class="container" style="padding: 0px;">
 			<a href="addStu.php"><button>Add Student</button></a>
-			<a href="delStu.php"><button>Delete Student</button></a><br>
-			<a href="addTeacher.php"><button>Add Teacher</button></a>
-			<a href="delTeacher.php"><button>Delete Teacher</button></a><br>
-			<a href="addSubject.php"><button>Add Subject</button></a>
-			<a href="delSubject.php"><button>Delete Subject</button></a><br>
-
+			<a href="delStu.php"><button>Delete Student</button></a><br><br><br>
+			<a href="addTeacher.php"><button>Add Teacher/Subject</button></a>
+			<a href="delTeacher.php"><button>Delete Teacher</button></a>
+			<a href="delSub.php"><button>Delete Subject</button></a><br>
 		</div>
-
+		<br><br><br>
     </body>
 </html>
