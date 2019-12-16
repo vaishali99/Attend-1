@@ -22,10 +22,15 @@
 		$null1 = NULL;
 		echo $null1;
 		
-		if($exists3<0)
+		if($exists3<1)
 		{
 			mysqli_query($con, "INSERT INTO users (username, id, password, user_cat) VALUES('$username','$id','$password','t')");
-			mysqli_query($con, "INSERT INTO subjects (sub_code, sub_name, t_id, sem, total_classes) VALUES('$sub_code','$sub_name','$id','$sem','0')");
+			
+			if($sub_code!=$null)
+			{
+				mysqli_query($con, "INSERT INTO subjects (sub_code, sub_name, t_id, sem, total_classes) VALUES('$sub_code','$sub_name','$id','$sem','0')");	
+				mysqli_query($con, "INSERT INTO code (sub_code, gcode) VALUES ('$sub_code', '$null')");
+			}
 			
 			$att = mysqli_query($con, "select * from student where sem = '$sem'");
 			$exists2 = mysqli_num_rows($att);
@@ -40,7 +45,7 @@
 				}			
 			}
 			
-			Print '<script>alert("Teacher Added!");</script>';
+			Print '<script>alert("Teacher/Subject Added!");</script>';
 			Print '<script>window.location.assign("admin.php");</script>';
 		}
 		else 
