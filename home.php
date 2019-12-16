@@ -3,7 +3,7 @@
 		<title>Home</title>
 	</head>
 	
-	<body style="background-color:rgb(229,255,204); color:black">
+	<body style="background-image:url('back2.jpg');">
 	<a href="index.php" style="color:rgb(0,0,102)">Click here to logout</a><br/><br/>
 	<br><br>
 		<?php
@@ -76,6 +76,7 @@
 			</form>		
 		</div>
 		
+		<div  style="border: 2px solid black; box-sizing: border-box;">
 		<h2 align="center">My Attendance</h2>
 		
 		<table align="center" border="1px" width="80%">
@@ -114,6 +115,7 @@
 				
 			?>
 		</table>
-		
+		<br><br>
+		</div>
 	</body>
 </html>
