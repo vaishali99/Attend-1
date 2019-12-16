@@ -64,7 +64,7 @@ mysqli_query($con, "UPDATE code SET gcode = '$c' WHERE sub_code = '$subjects_sub
 
 
 $startTime = strtotime("now");
-$endTime = strtotime("now+10 seconds");
+$endTime = strtotime("now+20 seconds");
 
 while(strtotime("now") < $endTime) {
 	echo " ";

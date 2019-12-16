@@ -17,16 +17,16 @@
     </head>
 	
 	<body style="background-image:url('back2.jpg');">
-		<form action="delTeacher1.php" method="POST">
+		<form action="delSub1.php" method="POST">
 			<div class="container" style="margin-top: 15%;">
 				<table border="0.5" style="width: 70%;">
 					
 					<tr>
-						<td><label for="id" style="float: right; margin-right: 5%;">ID</label></td>
-						<td><input type="text" name="id" id="id" style="width: 120%"></td>
+						<td><label for="sub_code" style="float: right; margin-right: 5%;">Subject Code</label></td>
+						<td><input type="text" name="sub_code" id="sub_code" style="width: 120%"></td>
 					</tr>
 					<tr>
-						<td><input type="submit" value="Submit"  style="margin-top: 10%; margin-left: 400%; padding: 0% 10%;"/>				
+						<td><input type="submit" value="Submit"  style="margin-top: 10%; margin-left: 200%; padding: 0% 10%;"/>				
 					</tr>
 				</table>
 			</div>

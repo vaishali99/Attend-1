@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2019 at 10:06 AM
+-- Generation Time: Dec 16, 2019 at 10:56 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -39,11 +39,16 @@ CREATE TABLE `attendance` (
 --
 
 INSERT INTO `attendance` (`s_id`, `sub_code`, `classes_attended`) VALUES
+(3000001, 'CS304', 0),
 (3000002, 'CS304', 12),
 (3000004, 'CS301', 11),
+(3000004, 'CS305', 0),
 (3000005, 'CS301', 15),
+(3000005, 'CS305', 1),
 (3000006, 'CS301', 0),
-(3000007, 'CS301', 0),
+(3000006, 'CS305', 0),
+(3000007, 'CS301', 2),
+(3000007, 'CS305', 0),
 (3000008, 'CS304', 0);
 
 -- --------------------------------------------------------
@@ -82,6 +87,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`s_id`, `sem`) VALUES
+(3000001, 3),
 (3000002, 3),
 (3000004, 5),
 (3000005, 5),
@@ -109,7 +115,8 @@ CREATE TABLE `subjects` (
 
 INSERT INTO `subjects` (`sub_code`, `sub_name`, `t_id`, `sem`, `total_classes`) VALUES
 ('CS301', 'Software Engineering', 2000001, 5, 19),
-('CS304', 'Formal Languages and Automata Theory', 2000002, 3, 14);
+('CS304', 'Formal Languages and Automata Theory', 2000002, 3, 14),
+('CS305', 'Numerical Linear Algebra', 2000005, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -132,6 +139,8 @@ INSERT INTO `users` (`username`, `id`, `password`, `user_cat`) VALUES
 ('Shiva', 1000002, 'shiva123', 'a'),
 ('Arpita', 2000001, 'arp5', 't'),
 ('Rani', 2000002, 'rani30', 't'),
+('Vaishali', 2000005, 'vai6', 't'),
+('Mona', 3000001, 'mona', 's'),
 ('Ankita', 3000002, 'ankita13', 's'),
 ('Aman', 3000004, 'aman', 's'),
 ('Meet', 3000005, 'mkk13', 's'),
@@ -183,18 +192,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3000009;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3000010;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `attendance`
---
-ALTER TABLE `attendance`
-  ADD CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`s_id`) REFERENCES `student` (`s_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `attendance_ibfk_2` FOREIGN KEY (`sub_code`) REFERENCES `subjects` (`sub_code`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `student`
@@ -206,7 +208,7 @@ ALTER TABLE `student`
 -- Constraints for table `subjects`
 --
 ALTER TABLE `subjects`
-  ADD CONSTRAINT `subjects_ibfk_1` FOREIGN KEY (`t_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `subjects_ibfk_1` FOREIGN KEY (`t_id`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
